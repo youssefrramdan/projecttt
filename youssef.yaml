@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-new-deployment  # Change the name to something unique
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: new-project
+  template:
+    metadata:
+      labels:
+        app: new-project
+    spec:
+      containers:
+        - name: my-container
+          image: yousseframadan676/final_project
+          ports:
+            - containerPort: 8080
